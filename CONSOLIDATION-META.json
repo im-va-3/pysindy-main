@@ -1,0 +1,40 @@
+{
+  "$schema": "../../../consolidation/schemas/project-meta.schema.json",
+  "commands": {
+    "build": null,
+    "reason": "The portfolio layer does not guess commands for heterogeneous upstream projects.",
+    "smoke": null,
+    "status": "command-not-configured",
+    "test": null
+  },
+  "language": [
+    "Python"
+  ],
+  "license": null,
+  "name": "pysindy-main",
+  "notes": [
+    "The source checkout remains the provenance and update source for this snapshot.",
+    "Consolidation improvements are represented by the flat category layout, provenance metadata, and shared validation contracts.",
+    "License names and terms must be verified from the copied project files; this exporter does not infer a license."
+  ],
+  "origin_url": null,
+  "schema_version": "1.0",
+  "snapshot": {
+    "category": "11-dynamical-systems-and-time-series",
+    "copied_bytes": 16776353,
+    "copied_files": 140,
+    "date": "2026-08-25",
+    "excluded_directories": [
+      "examples/data"
+    ],
+    "excluded_files": [],
+    "folder": "pysindy-main",
+    "kind": "independent-code-snapshot",
+    "skipped_symlinks": [],
+    "source_checkout_preserved": true,
+    "source_level_changes": false,
+    "topic": "sparse-dynamical-system-identification"
+  },
+  "source_path": "11-dynamical-systems-and-time-series/sparse-dynamical-system-identification/pysindy-main",
+  "status": "active"
+}
