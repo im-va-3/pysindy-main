@@ -201,6 +201,7 @@ class StableLinearSR3(ConstrainedSR3):
 
         try:
             prob.solve(
+                solver=cp.SCS,
                 max_iter=self.max_iter**2,
                 eps_abs=self.tol,
                 eps_rel=self.tol,

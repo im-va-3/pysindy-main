@@ -271,6 +271,7 @@ class ConstrainedSR3(SR3):
         prob_clone = deepcopy(prob)
         try:
             prob.solve(
+                solver=cp.SCS,
                 max_iter=self.max_iter,
                 eps_abs=tol,
                 eps_rel=tol,
@@ -279,7 +280,11 @@ class ConstrainedSR3(SR3):
         except cp.error.SolverError:
             try:
                 prob = prob_clone
-                prob.solve(max_iter=self.max_iter, verbose=self.verbose_cvxpy)
+                prob.solve(
+                    solver=cp.SCS,
+                    max_iter=self.max_iter,
+                    verbose=self.verbose_cvxpy,
+                )
                 xi = prob.variables()[0]
             except cp.error.SolverError:
                 warnings.warn("Solver failed, setting coefs to zeros")
