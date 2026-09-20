@@ -21,12 +21,10 @@
   "schema_version": "1.0",
   "snapshot": {
     "category": "11-dynamical-systems-and-time-series",
-    "copied_bytes": 16776353,
-    "copied_files": 140,
+    "copied_bytes": 121952411,
+    "copied_files": 272,
     "date": "2026-08-25",
-    "excluded_directories": [
-      "examples/data"
-    ],
+    "excluded_directories": [],
     "excluded_files": [],
     "folder": "pysindy-main",
     "kind": "independent-code-snapshot",
