@@ -272,7 +272,7 @@ class ConstrainedSR3(SR3):
         try:
             prob.solve(
                 solver=cp.SCS,
-                max_iter=self.max_iter,
+                max_iters=self.max_iter,
                 eps_abs=tol,
                 eps_rel=tol,
                 verbose=self.verbose_cvxpy,
@@ -282,7 +282,7 @@ class ConstrainedSR3(SR3):
                 prob = prob_clone
                 prob.solve(
                     solver=cp.SCS,
-                    max_iter=self.max_iter,
+                    max_iters=self.max_iter,
                     verbose=self.verbose_cvxpy,
                 )
                 xi = prob.variables()[0]
