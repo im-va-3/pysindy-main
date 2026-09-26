@@ -149,7 +149,7 @@ class SINDyPI(SR3):
             try:
                 prob.solve(
                     solver=cp.SCS,
-                    max_iter=self.max_iter,
+                    max_iters=self.max_iter,
                     eps_abs=self.tol,
                     eps_rel=self.tol,
                     verbose=self.verbose_cvxpy,
