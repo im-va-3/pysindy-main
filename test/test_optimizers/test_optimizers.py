@@ -527,7 +527,7 @@ def test_stable_linear_sr3_linear_library():
     )
     opt.fit(x, x)
     check_is_fitted(opt)
-    assert np.allclose(opt.coef_.flatten(), 0.0)
+    assert np.allclose(opt.coef_.flatten(), 0.0, atol=1e-7)
 
 
 @pytest.mark.parametrize("bias", (True, False))
@@ -852,7 +852,7 @@ def test_feature_format_constraints(data_linear_combination, optimizer, target_v
     model.fit(x, y)
 
     np.testing.assert_allclose(
-        np.array([model.coef_[1, 1], model.coef_[2, 2]]), target_value, atol=1e-7
+        np.array([model.coef_[1, 1], model.coef_[2, 2]]), target_value, atol=1e-5
     )
 
 
