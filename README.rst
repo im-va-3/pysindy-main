@@ -119,3 +119,46 @@ Related packages
 
 .. |DOI| image:: https://zenodo.org/badge/186055899.svg
    :target: https://zenodo.org/badge/latestdoi/186055899
+
+
+Step-by-step usage guide
+========================
+
+1. **Install PySINDy.** Create a Python environment and run::
+
+       python -m pip install pysindy
+
+   For the convex SR3 optimizer, MIOSR, or Bayesian regression, install the
+   documented cvxpy, miosr, or sbr extra.
+2. **Prepare time-series data.** Arrange measurements as one array per
+   trajectory, keep the time vector/sampling interval, and scale variables
+   when their magnitudes differ substantially. Use the existing example above
+   as the smallest working fit.
+3. **Choose derivatives and candidate terms.** Select a differentiation
+   method and a feature library that reflects the physics (polynomial,
+   trigonometric, custom, or tensor-product terms). Start with a small
+   candidate library to avoid fitting noise.
+4. **Fit and inspect the model.** Configure a SINDy model with the selected
+   optimizer and feature library, fit it to the trajectories, then print the
+   discovered equations. Check coefficient stability against noise and
+   threshold/regularization choices.
+5. **Validate predictions.** Simulate or predict from held-out initial
+   conditions and compare trajectories/residuals. For spatially distributed
+   data, follow the PDE-SINDy examples and preserve the spatial grid.
+6. **Extend the identification method.** Try control inputs, weak/integral
+   formulations, constraints, custom optimizers or feature libraries, and
+   multiple trajectories when the basic autonomous model is reliable.
+
+Functionality map
+-----------------
+
+* Sparse equation discovery and related system-identification methods.
+* Differentiation/smoothing, feature libraries, optimizers (including
+  STLSQ/SR3-family methods and optional MIOSR/SBR), and control-input models.
+* ODE and PDE model fitting, simulation/prediction, model scoring, and
+  custom libraries/optimizers.
+* Browse examples/ and docs/ for full workflows. The object model is at
+  https://pysindy.readthedocs.io/en/latest/objects and the API reference at
+  https://pysindy.readthedocs.io/en/latest/; these explain the complete
+  estimator and configuration surface.
+
